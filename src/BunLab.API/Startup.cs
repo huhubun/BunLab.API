@@ -84,6 +84,11 @@ namespace BunLab.API
                 options.SwaggerEndpoint("/docs/v1/swagger.json", "BunLab API v1");
                 options.RoutePrefix = "docs";
                 options.DocumentTitle = "BunLab API";
+                options.IndexStream = () =>
+                {
+                    // index.html 模板来自 https://github.com/domaindrivendev/Swashbuckle.AspNetCore/blob/master/src/Swashbuckle.AspNetCore.SwaggerUI/index.html
+                    return GetType().GetTypeInfo().Assembly.GetManifestResourceStream("BunLab.API.Content.SwaggerUI.index.html");
+                };
             });
         }
     }
