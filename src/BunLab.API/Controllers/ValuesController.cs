@@ -6,7 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BunLab.API.Controllers
 {
-    [Route("api/[controller]")]
+    [ApiVersion("1")]
+    [Route("v{version:apiVersion}/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
     {

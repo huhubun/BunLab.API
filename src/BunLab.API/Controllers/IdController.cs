@@ -9,7 +9,8 @@ namespace BunLab.API.Controllers
     /// <summary>
     /// 专注处理 Id 的协议
     /// </summary>
-    [Route("ids")]
+    [ApiVersion("1")]
+    [Route("v{version:apiVersion}/ids")]
     [ApiController]
     public class IdController : ControllerBase
     {
